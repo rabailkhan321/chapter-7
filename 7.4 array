@@ -1,0 +1,14 @@
+public class Random{
+	public static void main(String[] args)
+	{
+		final int arrlength = 10;
+		int [] arr=  new int [arrlength];
+		
+		System.out.printf("%s%8s%n", "Index" , "value");
+		for(int i = 0 ; i < arr.length ; i++)
+		{
+		 arr[i] = 2+2*i;
+		 System.out.printf("%d %5d%n" , i, arr[i]);
+		}
+	}
+}

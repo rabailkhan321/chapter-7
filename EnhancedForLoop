@@ -1,0 +1,15 @@
+public class EnhancedForLoop  //example of enhanced for loop book example 
+{
+	public static void main(String[] args)
+	{
+		
+		int [] arr = {1,2,3};
+		int total = 0;
+		for (int number : arr)
+		{
+			total = total + number ;
+			
+		}
+		System.out.printf("total is %d", total);
+	}
+}

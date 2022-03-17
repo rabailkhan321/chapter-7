@@ -1,0 +1,97 @@
+public class Card
+{
+	//public static void main(String[] args);
+	private final String face ;
+	private final String suit  ;
+	public Card (String face, String suit )
+	{
+		this.face = face;
+		this.suit = suit;
+		
+	}
+	
+	/*public void setFace(String face)
+	{
+		this.face = face;
+		
+	}
+	public String getFace()
+	{
+		return face;
+		
+	}
+	public void setSuit(String suit)
+	{
+	this.suit = suit;
+	
+	}
+	public String getSuit()
+	{
+		return face;
+	}*/
+	public String toString()
+	{
+		return face + "of" + suit; 
+	}
+	
+}
+import java.security.SecureRandom;
+public class DeckOfCards
+{
+	private Card [] deck ;
+	private static final int  Number_Of_Cards = 52;
+	private static final SecureRandom random= new SecureRandom();
+	private int currentcard;
+    
+	public DeckOfCards()
+	{
+		String [] face = {"Ace", "Deuce", "Three", "Four", "Five", "Six","Seven","Eight","Nine","Ten","Jack","Queen","King"};
+		String  [] suit = {"Hearts ","Diamonds","Clubs","Spades"};
+		 deck = new Card[ Number_Of_Cards];
+		currentcard = 0;
+		for (int i = 0; i< deck.length; i++)
+		{
+			
+			deck[i] = new Card (face[i%13] , suit[i/13]);
+			
+			
+		}
+		
+	}
+	public void shuffle()
+	{
+	   Card temp ;
+	   for (int j = 0; j<deck.length; j++)
+	   {
+		   int second = random.nextInt(Number_Of_Cards);
+		   temp = deck[j];
+		   deck[j] = deck[second];
+		   deck[second] = temp;
+		   
+	   }
+	}
+	public Card dealCard()
+	{
+		if (currentcard < deck.length)
+			return deck[currentcard++];
+		else 
+			return null; 
+	}
+}public class DeckOfCardsTest  //the worst program in chapter 7, deck of cards
+// separate the main and other classes as done in book while running on the compiler 
+{
+	public static void main (String[] args)
+	{
+		DeckOfCards myDeckOfCards = new DeckOfCards();
+		myDeckOfCards.shuffle();
+		//myDeckOfCards.dealCard();
+		for (int i = 0; i<=52 ; i++)
+		{
+			System.out.printf( "%-19s", myDeckOfCards.dealCard());
+			if(i%4==0)
+		System.out.println();
+		}
+		
+	}
+}
+		

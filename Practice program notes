@@ -1,0 +1,58 @@
+public class BookTest
+{
+	public static void main(String[] args) //this is a simple java practice program of an array that
+	                                        // how to initialize it and how to make reference type arrat.
+											//for further concepts check notes and for compiling this program seperate main and other program
+	{
+		
+		Book [] books = new Book[3];
+		books[0] =new Book ( 1, "Hadia");
+		books[1] = new Book (2, "Hania");
+		books[2] = new Book (3, "Zarish");
+		for(int i=0 ; i<books.length; i++)
+		{
+			//System.out.println(books[i].getId());
+			System.out.println(books[i].getName());
+		}
+	}
+}
+public class Book
+{
+	
+		
+		private int id;
+		private String name;
+		public Book(int id,  String name)
+		{
+			
+			this.id = id;
+			this.name = name;
+			
+		}
+		public void setId(int id){
+			
+			this.id = id;
+		}
+		public int getId()
+		{
+			
+			return id;
+		}
+		
+		public void setName(String name)
+		{
+			this.name = name ;
+			
+		}
+		public String getName()
+		{
+			
+			return name;
+		}
+		
+		
+		
+		
+		
+		
+	}

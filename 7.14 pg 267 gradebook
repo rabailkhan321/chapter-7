@@ -1,0 +1,81 @@
+//main 
+
+public class GradeTest
+{
+	public static void main(String[] args)
+	{
+		int [] gradesarray = {87, 68, 94, 100, 83, 78, 85, 91, 76, 87};
+		Grade mygradebook = new Grade("Introduction to computer science", gradesarray);
+	    System.out.printf("Welcome to the grade book for %n%s%n, ", mygradebook.GetName());
+		mygradebook.processGrade();
+		
+	}
+}
+
+//Grade.java 
+
+public class Grade
+{
+	int [] grade ; 
+	String coursename;
+	public Grade(String coursename, int [] grade)
+	{
+		this.grade = grade;
+		this.coursename = coursename;
+	}
+	public void SetName(String coursename)
+	{
+		this.coursename = coursename;
+	}
+	public String GetName()
+	{
+		return coursename;
+	}
+	public void processGrade()
+	{
+		outputgrade();
+		System.out.printf("the average is %f%n", getAverage());
+		System.out.printf("the highest grade is %d%n", getMaximum());
+		System.out.printf("the lowest grade is %d%n", getMinimum());
+	}
+	public void outputgrade()
+	{
+		System.out.printf("The grades are %n");
+		for(int student = 0; student< grade.length; student++)
+		{
+			System.out.printf("Student%2d = %3d%n", student+1, grade[student]);
+			
+		}
+	}
+	public double getAverage()
+	{
+		int total = 0;
+		for(int average : grade)
+		{
+			total = total + average;
+			//return (double) total/grade.length;
+		}
+		return (double) total/grade.length;
+	}
+	public int getMaximum()
+	{
+		int highgrade = grade[0];
+		for(int max : grade)
+		{
+			if(max > highgrade)
+				highgrade = max;
+		}
+		return highgrade;
+	}
+	public int getMinimum()
+	{
+		int lowgrade = grade[0];
+		for(int min : grade)
+		{
+			if(min < lowgrade)
+				lowgrade = min;
+		}
+		return lowgrade;
+	}
+}
+

@@ -1,0 +1,45 @@
+//this is a simple java practice program which i have created myself (from the topic 2d array) in which we have created an array
+//of size 3 and further it has columns of different sizes. wWe input values of this array from the user and display the array at the end of the program
+
+import java.util.Scanner ;
+public class Old 
+
+{
+	public static void main(String[] args)
+	{
+		
+		int  [][] arr = new int [3][];
+		arr[0] = new int [4];
+		arr[1] = new int [6];
+		arr[2] = new int [3];
+		display(arr);
+		
+	}
+	public static void display(int arr [][])
+	{
+		Scanner input = new Scanner(System.in);
+		System.out.printf("enter your favourite numbers ");
+		
+		for (int row = 0; row< arr.length; row++)
+		{
+			for(int column = 0; column< arr[row].length; column++)
+			{
+			  arr[row][column] = input.nextInt();
+			  //System.out.printf("%d   ", arr[row][column]);
+			}
+			System.out.println();
+		}
+		
+		
+		
+		for (int row = 0; row< arr.length; row++)
+		{
+			for(int column = 0; column< arr[row].length; column++)
+			{
+			  
+			  System.out.printf("%d   ", arr[row][column]);
+			}
+			System.out.println();
+		}
+	}
+}

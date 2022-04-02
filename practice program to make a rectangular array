@@ -1,0 +1,41 @@
+//practice program to make a rectangular array 
+import java.util.Scanner ;
+public class Old 
+
+{
+	public static void main(String[] args)
+	{
+		
+		int  [][] arr = new int [3][4];
+		
+		display(arr);
+		
+	}
+	public static void display(int arr [][])
+	{
+		Scanner input = new Scanner(System.in);
+		System.out.printf("enter your favourite numbers ");
+		
+		for (int row = 0; row< arr.length; row++)
+		{
+			for(int column = 0; column< arr[row].length; column++)
+			{
+			  arr[row][column] = input.nextInt();
+			  //System.out.printf("%d   ", arr[row][column]);
+			}
+			System.out.println();
+		}
+		
+		
+		
+		for (int row = 0; row< arr.length; row++)
+		{
+			for(int column = 0; column< arr[row].length; column++)
+			{
+			  
+			  System.out.printf("%d   ", arr[row][column]);
+			}
+			System.out.println();
+		}
+	}
+}

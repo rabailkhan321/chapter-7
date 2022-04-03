@@ -1,0 +1,42 @@
+import java.util.ArrayList;
+public class ArrayListCollection
+{
+	public static void main(String[] args)
+	{
+		
+		ArrayList<String> items = new ArrayList<String>();
+		items.add("red");
+		items.add(0, "yellow");
+		
+		System.out.printf("We will print the array list by using normal loop%n ");
+		for (int i =0; i< items.size() ; i++)
+		{
+			System.out.printf("%s  ", items.get(i));
+		}
+		//System.out.printf();
+		display(items , "%nNow we will be using the enhanced for loop for printing%n" );
+		items.add("green");
+		items.add("yellow");
+		display(items , "%nNow we will add yellow and green in the list%n" );
+		items.remove("yellow");
+		display(items , "%nNow we will remove first yellow from  the list%n" );
+		items.remove(1); 
+		display(items , "%nNow we will remove first green from  the list%n" );
+		//now we will see that is red in this list 
+		boolean b = items.contains("red");
+		System.out.printf("%nred is %s in this list",(b ? "": " not") );
+		//now we will find the size of the list
+		System.out.printf("%n size of the list is %d", items.size());
+		
+		
+		
+		
+	}
+	public static void display(ArrayList<String> items , String description)
+	{
+		System.out.printf(description);
+		for(String arr : items)
+			
+			System.out.printf("%s  ", arr);
+	}
+}

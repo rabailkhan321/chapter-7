@@ -1,0 +1,81 @@
+//a simple practice program to sort an array
+
+import java.util.Arrays;
+
+public class ArrayManipulation
+{
+	public static void main(String[] args)
+	{
+		//here we will sort array
+		double [] doublearray = {8.4, 9.3, 0.2, 7.9, 3.4};
+		System.out.printf("the original array is %n");
+        for(double arr : doublearray)
+		{
+		    System.out.printf("%.2f ", arr);
+		}
+			
+		System.out.printf("%nthe sorted array is %n");
+		
+		Arrays.sort(doublearray);
+		for(double jrr : doublearray)
+		{
+			System.out.printf("%.2f  ", jrr);
+		}
+		//now we will see how we can fill an array
+		 int [] fillarray = new int [10];
+		 System.out.printf("%nthe filled array is%n ");
+		 Arrays.fill(fillarray, 7);
+		 for(int i : fillarray)
+		 {
+			 System.out.printf("%d ", i);
+		 }
+		 //a program to make one array and copy the elements of that array into another empty array
+		 int [] intArray = {1,2,3,4,5,6};
+		 int [] intArrayCopy = new int [intArray.length];
+		 System.arraycopy(intArray, 0 , intArrayCopy , 0, intArray.length);
+		 System.out.printf("%n the value of the original array is %n");
+		 for(int val : intArray)
+		 {
+				System.out.printf("%d  ", val);
+		 }
+		 System.out.printf("%n the value of the copied array is %n");
+		 
+		 for(int val : intArray)
+		 {
+				System.out.printf("%d  ", val);
+		 }
+		 //now we will see how to compare two arrays (intArray and intArrayCopy)
+		 boolean b =  Arrays.equals(intArray, intArrayCopy);
+		 
+		 System.out.printf("%n intArray %s intArrayCopy %n", (b? "==" : "!=")); 
+		  //now we will see how to compare two arrays (intArray and fillarray)
+		   boolean a =  Arrays.equals(intArray, fillarray);
+		 
+		 System.out.printf("%n intArray %s fillarray %n", (a? "==" : "!=")); 
+		 //now we are going to use binary search to search a particular element in an array
+		 int location = Arrays.binarySearch(intArray, 5);
+		 if(location>=0)
+		 {
+			 System.out.printf("%n 5 is found at location %d%n", location);
+			 
+		 }
+		 else 
+			  System.out.printf("5 is not found in the given array%n");
+			 
+	    location = Arrays.binarySearch(intArray, 7864);
+		 if(location>=0)
+		 {
+			 System.out.printf("%n 7864 is found at location %d%n", location);
+			 
+		 }
+		 else 
+			  System.out.printf("7864 is not found in the given array%n");
+			 
+		  
+		  
+		  
+		
+	}
+	
+
+}
